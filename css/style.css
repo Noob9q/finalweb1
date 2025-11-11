@@ -1,0 +1,999 @@
+/* ОБЩИЕ СТИЛИ */
+body {
+    
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f2f5;
+    color: #333;
+    line-height: 1.6;
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+/* --- FLEXBOX: Task 1 (Navigation Bar) --- */
+
+.header-section {
+    background-color: #ffffff;
+    padding: 10px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    /* FLEXBOX: Выравнивание шапки (Task 1) */
+    display: flex;
+    justify-content: space-between; /* Лого, меню, язык по краям */
+    align-items: center; /* Центрирование по вертикали */
+    padding: 0 20px;
+}
+
+.logo img {
+    height: 40px;
+}
+
+.main-nav {
+    /* FLEXBOX: Промежутки между ссылками (Task 1) */
+    display: flex;
+    gap: 30px;  
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: #555;
+    padding: 10px 0;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.main-nav a:hover {
+    color: #007bff;
+}
+
+.language-selector {
+    display: flex;
+    gap: 10px;
+}
+
+.language-selector a {
+    text-decoration: none;
+    color: #888;
+    transition: color 0.3s;
+}
+
+.language-selector a:hover {
+    color: #000;
+}
+
+.lang-active {
+    font-weight: bold;
+}
+
+/* СТИЛИ ГЛАВНОЙ СТРАНИЦЫ (INDEX) */
+
+/* --- CSS GRID: Task 3 (Главный макет index.html) --- */
+.main-content-container {
+    max-width: 1200px;
+    margin: 20px auto;
+    display: grid; 
+    /* 300px для сайдбара, остальное (1fr) для новостей */
+    grid-template-columns: 300px 1fr; 
+    gap: 40px; 
+    padding: 0 20px;
+}
+
+.main-column-left {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.main-news-column-right {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.tournament-table {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.tournament-table h2 {
+    font-size: 1.2rem;
+    color: #444;
+}
+
+.tournament-table table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tournament-table th,
+.tournament-table td {
+    padding: 12px 8px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+.tournament-table th {
+    font-weight: bold;
+}
+
+.team-name {
+    /* FLEXBOX: Выравниваем логотип и название команды */
+    display: flex;
+    align-items: center;
+}
+
+.team-logo {
+    height: 25px;
+    width: 25px;
+    margin-right: 10px;
+}
+
+.best-players-block {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.best-players-block h2 {
+    font-size: 1.2rem;
+    color: #444;
+    margin-top: 0;
+}
+
+.best-players-block ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.best-players-block li {
+    /* FLEXBOX: Выравниваем элементы списка бомбардиров */
+    display: flex;
+    align-items: center;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+}
+
+.player-photo {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.player-team-logo {
+    width: 25px;
+    height: 25px;
+    margin-right: 8px;
+}
+
+.main-news {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+.main-news img {
+    width: 100%;
+    height: auto;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.news-text-content {
+    padding: 20px;
+}
+
+.news-text-content h1 {
+    font-size: 2rem;
+    color: #333;
+    line-height: 1.2;
+}
+
+.news-date {
+    font-size: 0.9rem;
+    color: #888;
+    margin-top: 10px;
+}
+
+.other-news {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    
+    /* FLEXBOX: Task 2 (Выстраиваем новости в ряд, как карточки) */
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+
+.news-item {
+    /* Каждый блок новости занимает равное место */
+    flex: 1; 
+    
+    /* Внутренняя структура: изображение сверху, текст снизу */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    
+    border-bottom: none; 
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+.news-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.news-item img {
+    width: 100%;
+    height: 150px; 
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.news-item p {
+    margin: 0;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    color: #555;
+}
+
+
+/* СТИЛИ ДЛЯ СТРАНИЦЫ "О ЛИГЕ" */
+
+.main-content-about-page {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.about-info-section {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
+}
+
+.about-info-section h1 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* --- CSS GRID: Task 3 (Двухколоночный макет) --- */
+.about-content-wrapper {
+    display: grid;
+    /* Две колонки равной ширины */
+    grid-template-columns: 1fr 1fr; 
+    gap: 40px;
+    align-items: center;
+}
+
+
+.about-text-column p {
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+
+.league-stats {
+    display: flex;
+    justify-content: space-between; 
+    gap: 30px;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    line-height: 1;
+    text-align: center;
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #007bff;
+    display: block;
+}
+
+.stat-label {
+    display: block;
+    font-size: 0.9rem;
+    color: #888;
+}
+
+.about-map-column {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.kazakhstan-map {
+    max-height: 100%;
+    max-width: 100%;
+    height: auto;
+    width: auto;
+    object-fit: contain;
+}
+
+.section-title-qj {
+    text-align: center;
+    font-size: 3.5rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.single-image-section {
+    margin-bottom: 40px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.single-image-block {
+    position: relative;
+    text-align: center;
+}
+
+.main-about-photo {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.management-section {
+    padding: 20px;
+    text-align: center;
+}
+
+.management-section h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
+/* FLEXBOX: Task 2 (Карточки Руководства) */
+.management-cards {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap;
+    /* КЛЮЧ: Обеспечивает равную высоту всем карточкам */
+    align-items: stretch; 
+}
+
+.manager-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: #ffffff;
+    padding: 30px 20px;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    max-width: 300px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.manager-card:hover {
+    /* Hover эффект */
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+.manager-photo {
+    width: 220px;
+    height: 220px;
+    border-radius: 10px;
+    object-fit: cover;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.manager-role {
+    font-size: 1rem;
+    color: #666;
+    text-transform: uppercase;
+    margin: 0;
+    letter-spacing: 0.5px;
+}
+
+.manager-name {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #333;
+    margin: 8px 0;
+}
+
+.manager-email {
+    font-size: 1.1rem;
+    color: #0056b3;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    /* Прижимает почту к низу */
+    margin-top: auto; 
+}
+
+.manager-email:hover {
+    color: #003d80;
+}
+
+
+/* СТИЛИ ПОДВАЛА (FOOTER) */
+.footer-section {
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: #fff;
+    margin-top: 40px;
+    min-height: 50px;
+}
+/* --- Стили для Задачи 1: Form Validation --- */
+
+.error-message {
+    color: #dc3545; /* Красный цвет */
+    font-size: 0.875em; 
+    margin-top: 5px;
+    height: 1em; /* Резервируем место */
+}
+/* --- Стили для Задачи 2: Accordion --- */
+
+.accordion-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.accordion-btn {
+    background-color: #ffffff;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 1.1rem;
+    transition: background-color 0.4s ease;
+    border-bottom: 1px solid #ddd;
+    position: relative; /* Для псевдоэлемента */
+}
+
+/* Добавляем иконку "+" справа */
+.accordion-btn::after {
+    content: '+'; /* Знак плюса */
+    color: #007bff;
+    font-weight: bold;
+    position: absolute;
+    right: 20px;
+    transition: transform 0.3s ease;
+}
+
+.accordion-btn.active::after {
+    transform: rotate(45deg); /* Превращает "+" в "х" */
+}
+
+.accordion-btn:hover, .accordion-btn.active {
+    background-color: #f1f1f1;
+}
+
+.accordion-panel {
+    padding: 0 18px;
+    background-color: white;
+    /* Ответ по умолчанию скрыт */
+    max-height: 0;
+    overflow: hidden;
+    /* Плавный переход для раскрытия/скрытия */
+    transition: max-height 0.3s ease-out;
+    border-bottom: 1px solid #ddd;
+}
+
+.accordion-panel p {
+    padding: 15px 0;
+    margin: 0;
+}
+/* --- Стили для Задачи 3: Pop-up Form --- */
+
+.popup-container {
+    /* Скрыто по умолчанию */
+    visibility: hidden;
+    
+    /* Делаем его наложением на весь экран */
+    position: fixed; 
+    z-index: 1050; /* Z-индекс выше, чем у большинства элементов, чтобы быть поверх всего */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    
+    /* Полупрозрачный фон */
+    background-color: rgba(0, 0, 0, 0.7); 
+    
+    /* Центрирование контента */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-content {
+    background-color: #740383;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    position: relative;
+    width: 90%;
+    max-width: 400px; /* Ограничиваем ширину формы */
+    animation: fadeIn 0.3s ease-out; /* Анимация появления */
+}
+
+/* Кнопка закрытия */
+.close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    line-height: 20px;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: #333;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Анимация появления (опционально, для красоты) */
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* Стиль для активного состояния (показываем pop-up) */
+.popup-container.active {
+    visibility: visible; /* Переключаем с 'hidden' на 'visible' для отображения */
+}
+
+/* Улучшение стилей для формы Bootstrap */
+.popup-content h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #007bff; /* Цвет заголовка, как у Bootstrap Primary */
+}
+/*Стили для Шага 1.2: Динамическое приветствие*/
+
+#greeting-message {
+    font-size: 2rem;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: #007bff !important; 
+}  
+/* --- Стили для Шага 2: Ночной/Дневной режим --- */
+
+.dark-mode {
+    background-color: #1a1a2e; /* Темно-синий/почти черный фон */
+    color: #e6e6fa; /* Светлый текст */
+}
+
+/* Изменение стилей шапки */
+.dark-mode .header-section {
+    background-color: #2c0e44; /* Темная шапка */
+    box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
+}
+
+/* Изменение стилей меню */
+.dark-mode .main-nav a {
+    color: #e6e6fa;
+}
+
+/* Изменение стилей карточек новостей/менеджеров */
+.dark-mode .card,
+.dark-mode .manager-card {
+    background-color: #30194a !important; 
+    border-color: #4a2d73 !important;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5) !important;
+}
+
+.dark-mode .card-text,
+.dark-mode .card-title,
+.dark-mode .manager-name,
+.dark-mode .manager-role {
+    color: #e6e6fa !important;
+}
+
+/* Изменение стилей подвала */
+.dark-mode .footer-section {
+    background-color: #2c0e44;
+    color: #e6e6fa;
+}
+
+/* Изменение стилей заголовков */
+.dark-mode h1,
+.dark-mode h2,
+.dark-mode h3 {
+    color: #9370DB !important; /* Более яркий заголовок для контраста */
+}
+/* --- Part 2. Task 5: Стили для Счётчика --- */
+.stats-section {
+    background-color: #f8f9fa; 
+    border-radius: 10px;
+    margin-bottom: 40px;
+}
+
+.stat-item {
+    padding: 20px;
+}
+
+.stat-value {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #e3073e; /* Ваш акцентный цвет */
+    margin-bottom: 5px;
+}
+
+.stat-label {
+    font-size: 1rem;
+    color: #6c757d;
+    text-transform: uppercase;
+}
+/* --- Part 1. Task 3: Стили для выделения поиска --- */
+.highlight {
+    background-color: #ffc107; /* Яркий желтый (предупреждающий) цвет Bootstrap */
+    font-weight: bold; 
+    padding: 2px 0; /* Небольшой отступ для красоты */
+}
+/* --- Part 2. Task 4: Стили для Scroll Progress Bar --- */
+#progressBar {
+    /* Фиксируем вверху, растягиваем на всю ширину */
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1030; /* Выше шапки/навигации */
+    
+    height: 5px; /* Высота полосы */
+    background-color: #e3073e; /* Цвет QJ League */
+    width: 0%; /* Начинаем с 0% */
+}
+/* --- Assignment 8: Исправление Ночного Режима (Task 4) --- */
+
+/* 1. Исправление для страницы "О лиге" (image_90e9a5.png) */
+/* Заставляем фон секции "О лиге" стать темным */
+.dark-mode .about-info-section .p-3,
+.dark-mode .stats-section {
+    background-color: #1e1e2c; /* Подберите темный фон, как у карточек */
+    color: #f0f0f0;
+    border-radius: 8px; /* Добавляем скругление, как у карточек */
+}
+
+/* 2. Исправление для страницы "FAQ" (image_90e986.png) */
+/* Заставляем аккордеон стать темным */
+.dark-mode .accordion-btn,
+.dark-mode .accordion-panel {
+    background-color: #2a2a35; /* Темный фон */
+    color: #f0f0f0; /* Светлый текст */
+    border-color: #444; /* Темная граница */
+}
+
+/* 3. Улучшаем контрастность кнопок аккордеона при наведении */
+.dark-mode .accordion-btn:hover,
+.dark-mode .accordion-btn.active {
+    background-color: #3a3a45;
+    color: #fff;
+}
+.page-title {
+    font-size: 36px;
+    font-weight: bold;
+    color: #007bff; /* Используем основной цвет Bootstrap */
+    margin: 0;
+}
+
+/* Новая сетка 3x3 для всех новостей */
+.news-grid-3x3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 колонки одинаковой ширины */
+    gap: 20px; /* Отступы между карточками */
+}
+
+/* Общие стили для ВСЕХ карточек (теперь они все "small-card") */
+.news-card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    display: flex; /* Делаем каждую карточку флекс-контейнером */
+    flex-direction: column; /* Элементы внутри карточки идут сверху вниз */
+    height: auto; /* Высота подстраивается под контент */
+    border: 1px solid #eee; /* Легкая рамка */
+    padding: 0;
+}
+
+.news-card .card-image {
+    width: 100%;
+    height: 180px; /* Увеличил высоту изображения для лучшего вида */
+    object-fit: cover; /* Изображение будет покрывать всю область */
+    display: block;
+}
+
+.news-card .card-body {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Чтобы тело карточки растягивалось и прижимало дату вниз */
+}
+
+.news-card h3 {
+    font-size: 1.1rem;
+    margin: 0 0 5px 0;
+    color: #333 !important;
+}
+
+.news-card p {
+    font-size: 0.9rem;
+    color: #777;
+    margin-bottom: 10px; /* Отступ между текстом и датой */
+}
+
+.news-card .date {
+    font-size: 0.8rem;
+    color: #999;
+    margin-top: auto; /* Прижимает дату к низу карточки */
+}
+
+
+/* --- Медиа-запросы для адаптивности новой сетки 3x3 --- */
+@media (max-width: 992px) {
+    .news-grid-3x3 {
+        grid-template-columns: repeat(2, 1fr); /* На планшетах делаем 2 колонки */
+    }
+}
+@media (max-width: 576px) {
+    .news-grid-3x3 {
+        grid-template-columns: 1fr; /* На мобильных делаем 1 колонку */
+    }
+}
+
+/* ====================================================================== */
+/* === СТИЛИ ДЛЯ СТРАНИЦЫ СТАТИСТИКИ (statistics.html) === */
+/* ====================================================================== */
+
+.statistics-page-content h2 {
+    color: #e3073e; /* Твой акцентный цвет */
+}
+
+.league-table-full {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.league-table-full th, .league-table-full td {
+    padding: 12px 8px;
+    font-size: 0.95rem;
+}
+
+/* Индивидуальная статистика */
+.individual-stats-container .stats-block h4 {
+    color: #007bff;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.individual-stats-container .list-group-item {
+    font-weight: 500;
+    font-size: 1.05rem;
+    border-color: #000000;
+}
+
+.individual-stats-container .player-photo {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 10px;
+    object-fit: cover;
+}
+
+/* ====================================================================== */
+/* === СТИЛИ ДЛЯ СТРАНИЦЫ СТАТИСТИКИ (statistics.html) === */
+/* ====================================================================== */
+
+.statistics-page-content h2 {
+    color: #e3073e; /* Твой акцентный цвет */
+}
+
+.league-table-full {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.league-table-full th, .league-table-full td {
+    padding: 12px 8px;
+    font-size: 0.95rem;
+}
+
+/* Индивидуальная статистика */
+.individual-stats-container .stats-block h4 {
+    color: #007bff;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.individual-stats-container .list-group-item {
+    font-weight: 500;
+    font-size: 1.05rem;
+    border-color: #eee;
+}
+
+.individual-stats-container .player-photo {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 10px;
+    object-fit: cover;
+}
+/* ====================================================================== */
+/* === СТИЛИ ДЛЯ ВИДЖЕТА GOOGLE TRANSLATE (API) === */
+/* ====================================================================== */
+
+/* Скрываем баннер "Google Translate" и лишние ссылки */
+#google_translate_element {
+    /* Чтобы виджет отображался корректно рядом с другими элементами */
+    display: inline-block;
+    vertical-align: middle;
+    /* Уменьшаем отступы, если нужно */
+    margin: 0 5px; 
+}
+
+/* Скрываем верхнюю панель, которую добавляет Google Translate */
+body > .skiptranslate, 
+.goog-te-banner-frame {
+    display: none !important;
+}
+
+/* Убеждаемся, что тело страницы не смещается */
+body {
+    top: 0px !important;
+}
+
+/* Стилизация самого селектора (делаем его более компактным) */
+.goog-te-combo {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 6px 10px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    background-color: #f8f9fa; /* Светлый фон */
+    transition: all 0.3s;
+}
+
+/* Убираем рамку вокруг виджета, если она есть */
+.goog-te-gadget {
+    font-size: 0; /* Чтобы скрыть текст "Google Translate" */
+}
+/* Стили для Карусели на Главной */
+.carousel-img {
+    height: 450px; /* Фиксированная высота для всех слайдов */
+    object-fit: cover; /* Обрезка, чтобы изображение покрывало весь контейнер */
+    border-radius: 8px; /* Немного скруглим углы */
+}
+
+/* Стилизация для мобильных устройств (адаптивность) */
+@media (max-width: 768px) {
+    .carousel-img {
+        height: 250px; /* Уменьшаем высоту на мобильных */
+    }
+}
+
+/* Перекрашивание кнопок (опционально, зависит от вашей темы) */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, 0.4); 
+    border-radius: 50%;
+    padding: 15px;
+}
+/* ====================================================================== */
+/* 1. СТИЛИЗАЦИЯ ШАПКИ/НАВИГАЦИИ В НОЧНОМ РЕЖИМЕ (.dark-mode) */
+/* ====================================================================== */
+.dark-mode .header-section {
+    background-color: #121212; /* Убеждаемся, что сама шапка очень темная */
+    border-bottom: 1px solid #333;
+}
+
+.dark-mode .main-nav-ul .nav-link,
+.dark-mode .language-selector .nav-link {
+    color: #f8f9fa !important; /* Светлый текст для обычных ссылок */
+}
+
+/* Цвет активной ссылки */
+.dark-mode .main-nav-ul .nav-link.active {
+    color: var(--bs-primary) !important; /* Оставляем акцентный цвет, но он должен быть ярким */
+}
+
+/* Стили для кнопки Входа/Регистрации (если она меняет цвета) */
+.dark-mode .auth-link .btn-outline-primary {
+    color: var(--bs-primary);
+    border-color: var(--bs-primary);
+}
+.dark-mode .auth-link .btn-outline-primary:hover {
+    background-color: var(--bs-primary);
+    color: #121212;
+}
+/* ====================================================================== */
+/* 2. СТИЛИЗАЦИЯ ТАБЛИЦ ВО ВСЕХ ФАЙЛАХ (.dark-mode) */
+/* ====================================================================== */
+
+/* ====================================================================== */
+/* 3. ИСПРАВЛЕНИЕ КНОПКИ/СЕКЦИИ CTA НА INDEX.HTML (.dark-mode) */
+/* ====================================================================== */
+/* Пример: Секция призыва к действию (CTA) */
+.dark-mode .cta-section {
+    background-color: #1e1e1e;
+    color: #f8f9fa;
+    border: 1px solid #3a3a3a;
+}
+
+/* Сама кнопка (предполагаем, что это btn-primary) */
+.dark-mode .btn-primary {
+    /* Если в ночном режиме кнопка становится слишком темной */
+    background-color: var(--bs-primary); /* Используем акцентный цвет */
+    border-color: var(--bs-primary);
+    color: #121212; /* Убеждаемся, что текст внутри кнопки темный и виден */
+}
+.dark-mode .btn-primary:hover {
+    filter: brightness(1.2); /* Делаем ее немного светлее при наведении */
+}
+.mb-0{
+    color:#ffffff;
+}
+/* ====================================================================== */
+/* СТИЛИ ДЛЯ СТРАНИЦЫ ПРОФИЛЯ/ФОРМ В НОЧНОМ РЕЖИМЕ */
+/* ====================================================================== */
+
+/* 1. Основной текст внутри контейнера <main> */
+.dark-mode main,
+.dark-mode body {
+    color: #f8f9fa; /* Делаем весь основной текст светлым */
+}
+
+/* 2. Стиль для меток/текста перед полями (Label/P) */
+.dark-mode label,
+.dark-mode p,
+.dark-mode span {
+    color: #f8f9fa !important; /* Принудительно задаем светлый цвет (белый/почти белый) */
+}
+
+/* 3. Стиль для полей ввода (чтобы они тоже были темными, а текст в них светлым) */
+.dark-mode .form-control {
+    background-color: #1e1e1e !important; /* Темный фон для поля ввода */
+    color: #f8f9fa !important; /* Светлый текст внутри поля */
+    border-color: #444 !important;
+}
+
+/* 4. Стиль для заголовков, чтобы они были видны */
+.dark-mode h1, .dark-mode h2, .dark-mode h3 {
+    color: #f8f9fa !important; 
+}
+.user-ratings-container{
+    color: #2c0e44;
+}

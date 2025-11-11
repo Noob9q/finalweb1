@@ -1,0 +1,308 @@
+
+.main-content-container {
+    display: block; 
+    grid-template-columns: initial; 
+    
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+    
+.players-section {
+    padding: 40px 0;
+}
+
+.players-section h2 {
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 2.2rem;
+    color: #333;
+}
+
+.player-group {
+    margin-bottom: 60px;
+}
+
+.player-group h3 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 1.8rem;
+    color: #333;
+}
+
+/*CSS Grid для галереи:*/
+.player-cards {
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+    gap: 30px; 
+    padding: 0 20px;
+    max-width: 1000px; 
+    margin: 0 auto;
+}
+
+.player-card {
+    background: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative; 
+    padding: 30px 20px;
+}
+
+/* Ключевой стиль для диагонального эффекта: сдвигаем каждую вторую карточку в ряду вниз */
+.player-cards > .player-card:nth-child(3n + 2) {
+    transform: translateY(30px); 
+}
+
+.player-card img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%; 
+    margin-bottom: 15px;
+    border: 3px solid #eee;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.player-card p {
+    padding: 0;
+    margin-bottom: 5px;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #333;
+    line-height: 1.3;
+}
+
+.player-card span.position { 
+    font-size: 0.9rem;
+    color: #777;
+    display: block;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.player-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 18px rgba(0,0,0,0.2);
+}
+
+@media (max-width: 992px) {
+    .player-cards > .player-card:nth-child(3n + 2) {
+        transform: none; 
+    }
+}
+@media (max-width: 480px) {
+    .player-cards {
+        grid-template-columns: 1fr; 
+    }
+}
+
+.main-content-container {
+    display: block; 
+    grid-template-columns: initial; 
+    
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+    
+.players-section {
+    padding: 40px 0;
+}
+
+.players-section h2 {
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 2.2rem;
+    color: #333;
+}
+
+.player-group {
+    margin-bottom: 60px;
+}
+
+.player-group h3 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 1.8rem;
+    color: #333;
+}
+
+/*CSS Grid для галереи:*/
+.player-cards {
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+    gap: 30px; 
+    padding: 0 20px;
+    max-width: 1000px; 
+    margin: 0 auto;
+}
+
+.player-card {
+    background: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative; 
+    padding: 30px 20px;
+}
+
+/* Ключевой стиль для диагонального эффекта: сдвигаем каждую вторую карточку в ряду вниз */
+.player-cards > .player-card:nth-child(3n + 2) {
+    transform: translateY(30px); 
+}
+
+.player-card img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%; 
+    margin-bottom: 15px;
+    border: 3px solid #eee;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.player-card p {
+    padding: 0;
+    margin-bottom: 5px;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #333;
+    line-height: 1.3;
+}
+
+.player-card span.position { 
+    font-size: 0.9rem;
+    color: #777;
+    display: block;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.player-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 18px rgba(0,0,0,0.2);
+}
+
+@media (max-width: 992px) {
+    .player-cards > .player-card:nth-child(3n + 2) {
+        transform: none; 
+    }
+}
+@media (max-width: 480px) {
+    .player-cards {
+        grid-template-columns: 1fr; 
+    }
+}
+/* --- Стили для Шага 4: Система Рейтинга Звезд --- */
+
+/* --- Стили для системы рейтинга --- */
+
+.rating-system {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.rating-star {
+    color: #ccc; /* Цвет по умолчанию (серый) */
+    transition: color 0.2s ease-in-out;
+}
+
+/* Активный/выбранный рейтинг */
+.rating-system:hover .rating-star {
+    color: orange; /* Можно добавить эффект при наведении */
+}
+
+/* Звезда, которая была оценена пользователем */
+.rating-star.rated {
+    color: #ffc107; /* Желтый/золотой цвет */
+}
+
+/* Звезда, на которую навели, и все звезды до нее */
+.rating-star:hover ~ .rating-star:not(.rated) {
+    color: #ccc; /* Убедимся, что звезды после наведенной не меняют цвет */
+}
+
+.rating-star:hover,
+.rating-star:hover ~ .rating-star {
+    color: #ffc107;
+}
+
+/* Адаптация для темного режима */
+.dark-mode .rating-star {
+    color: #555;
+}
+.dark-mode .rating-star.rated {
+    color: #ffc107;
+}
+#progress-bar {
+    position: fixed; /* Фиксируем полосу вверху */
+    top: 0;
+    left: 0;
+    z-index: 1030; /* Убедитесь, что он поверх шапки */
+    height: 5px; /* Высота полосы */
+    background: linear-gradient(90deg, #f79521, #e3073e); /* Красивый градиент */
+    width: 0%; /* Начинаем с нулевой ширины */
+    transition: width 0.1s linear; /* Плавное изменение ширины */
+}
+/* Исправление ширины поля поиска, сломанного стилями jQuery UI */
+#player-search {
+    width: 100% !important; /* Устанавливаем полную ширину родительского элемента */
+    min-width: 250px;       /* Минимальная ширина, чтобы не было слишком узко на мобильных */
+    box-sizing: border-box; /* Важно: включает padding и border в общую ширину */
+}
+
+/* Также исправьте расположение самого выпадающего списка Autocomplete */
+.ui-autocomplete {
+    max-width: 100%;
+    z-index: 1000; /* Убедитесь, что список отображается поверх других элементов */
+}
+/* ====================================================================== */
+/* === СТИЛИ ДЛЯ ВИДЖЕТА GOOGLE TRANSLATE (API) === */
+/* ====================================================================== */
+
+/* Скрываем баннер "Google Translate" и лишние ссылки */
+#google_translate_element {
+    /* Чтобы виджет отображался корректно рядом с другими элементами */
+    display: inline-block;
+    vertical-align: middle;
+    /* Уменьшаем отступы, если нужно */
+    margin: 0 5px; 
+}
+
+/* Скрываем верхнюю панель, которую добавляет Google Translate */
+body > .skiptranslate, 
+.goog-te-banner-frame {
+    display: none !important;
+}
+
+/* Убеждаемся, что тело страницы не смещается */
+body {
+    top: 0px !important;
+}
+
+/* Стилизация самого селектора (делаем его более компактным) */
+.goog-te-combo {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 6px 10px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    background-color: #f8f9fa; /* Светлый фон */
+    transition: all 0.3s;
+}
+
+/* Убираем рамку вокруг виджета, если она есть */
+.goog-te-gadget {
+    font-size: 0; /* Чтобы скрыть текст "Google Translate" */
+}

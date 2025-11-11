@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <!-- Подключение Bootstrap CSS -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QJ League | О лиге</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+</head>
+<body>
+    <div id="progress-bar"></div>
+    <header class="header-section">
+    <nav class="navbar navbar-expand-lg">
+        <div class="header-container container-fluid">
+            <a href="index.html" class="logo navbar-brand">
+                <img src="images/qj-logo.png" alt="QJ League Logo">
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 main-nav-ul">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Главная</a></li>
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="about.html">О лиге</a></li>
+                    <li class="nav-item"><a class="nav-link" href="statistics.html">Статистика</a></li>
+                    <li class="nav-item"><a class="nav-link" href="news.html">Новости</a></li>
+                    <li class="nav-item"><a class="nav-link" href="gallery.html">Медиа</a></li>
+                    <li class="nav-item"><a class="nav-link" href="faq.html">FAQ</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Контакты</a></li>
+                </ul>
+
+                <div class="language-selector d-flex align-items-center">
+    <li class="nav-item profile-link" style="display: none;">
+        <a class="nav-link" href="profile.html">
+            <i class="fa-solid fa-user"></i> Профиль
+        </a>
+    </li>
+    <li class="nav-item auth-link">
+        <a class="nav-link btn btn-sm btn-outline-primary" href="auth.html">
+            Вход / Регистрация
+        </a>
+    </li>
+
+    <div id="google_translate_element" class="me-3"></div>
+    <button id="theme-toggle" class="btn btn-sm btn-outline-secondary">
+        🌙 Ночной режим
+    </button>
+</div>
+            </div>
+        </div>
+    </nav>
+</header>
+    <!-- ОСНОВНОЙ КОНТЕНТ (Используем Bootstrap Grid и Cards) -->
+    <main class="main-content-about-page">
+        <section class="stats-section py-5 text-center">
+        <h2>Достижения QJ League</h2>
+        <div class="row justify-content-center">
+            
+            <div class="col-md-3 stat-item">
+                <div class="stat-value count-up" data-target="54">0</div>
+                <p class="stat-label">Команд</p>
+            </div>
+            
+            <div class="col-md-3 stat-item">
+                <div class="stat-value count-up" data-target="25000">0</div>
+                <p class="stat-label">Болельщиков</p>
+            </div>
+            
+            <div class="col-md-3 stat-item">
+                <div class="stat-value count-up" data-target="675">0</div>
+                <p class="stat-label">Игроков</p>
+            </div>
+            
+        </div>
+    </section>
+    <section class="action-section text-center my-5">
+    <h3 class="mb-3">Готовы к сотрудничеству?</h3>
+    <button id="simulate-btn" class="btn btn-warning btn-lg">
+        Начать сотрудничество
+    </button>
+</section>
+        <!-- Контейнер для центрирования контента и отступов -->
+        <div class="container my-5">
+            
+            <section class="about-info-section">
+                <!-- Row для разделения текста и карты (8/4) -->
+                <div class="row align-items-center g-4">
+                    
+                    <!-- Текстовый блок (8 колонок на больших экранах, 12 на мобильных) -->
+                    <div class="col-lg-8">
+                        <div class="p-3">
+                            <h1>О лиге</h1>
+                            <p>FREEDOM QJ LEAGUE – проект Казахстанской Федерации Футбола, который уже сегодня создаёт будущее футбола Казахстана, применяя лучшие мировые стандарты в организации соревнований, образовании и аналитике.</p>
+                            <p>"Лучшая спортивная организация Казахстана" по версии "MetaRatings Top Awards" 2024 и 2025.</p>
+                            
+                            <!-- Статистика: используем d-flex и gap для Flexbox -->
+                            <div class="d-flex flex-wrap gap-4 mt-4">
+                                <div class="text-center">
+                                    <h2 class="stat-number text-primary fs-1 fw-bold">54</h2>
+                                    <span class="stat-label text-muted d-block">Команды</span>
+                                </div>
+                                <div class="text-center">
+                                    <h2 class="stat-number text-primary fs-1 fw-bold">542</h2>
+                                    <span class="stat-label text-muted d-block">Матчей</span>
+                                </div>
+                                <div class="text-center">
+                                    <h2 class="stat-number text-primary fs-1 fw-bold">1620</h2>
+                                    <span class="stat-label text-muted d-block">Игроков</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Блок с картой (4 колонки на больших экранах) -->
+                    <div class="col-lg-4 text-center">
+                        <img src="images/kazakhstan-map.png" alt="Карта Казахстана с расположением клубов" class="img-fluid rounded shadow">
+                    </div>
+
+                </div>
+            </section>
+            
+            <h2 class="text-center my-5 section-title-qj">QJ League</h2>
+            
+            <section class="single-image-section mb-5">
+                <div class="text-center">
+                    <img src="images/qj-league-photo.jpg" alt="QJ League" class="img-fluid rounded shadow-lg">
+                </div>
+            </section>
+                <section class="currency-api-section container my-5">
+    <div class="card p-3 shadow-sm border-primary">
+        <h4 class="card-title text-primary"><i class="fas fa-money-bill-wave me-2"></i> Курс тенге (KZT)</h4>
+        <div class="card-body p-0">
+            <p class="mb-0">Текущий курс USD к KZT:</p>
+            <h2 id="kzt-exchange-rate" class="display-6 fw-bold">Загрузка...</h2>
+        </div>
+        <p class="card-text text-muted small mt-2">Данные предоставлены через Frankfurter API (ЕЦБ).</p>
+    </div>
+</section>
+            <!-- СЕКЦИЯ: Руководство (Используем Bootstrap Cards) -->
+            <section class="management-section my-5">
+                <h2 class="text-center mb-4">Руководство</h2>
+                
+                <!-- Адаптивная сетка карточек: 1 на мобильном, 2 на планшете, 3 на десктопе. g-4 для отступов. -->
+                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+                    
+                    <!-- Карточка 1: Тимур Турлов -->
+                    <div class="col">
+                        <div class="card h-100 shadow-lg text-center border-0">
+                            <img src="images/timur.jpg" alt="Тимур Турлов" class="card-img-top img-fluid mx-auto mt-3" style="width: 70%; height: auto; border-radius: 10px;">
+                            <div class="card-body d-flex flex-column justify-content-between">
+                                <div>
+                                    <h6 class="card-subtitle text-muted mb-1 manager-role">ПРЕДСЕДАТЕЛЬ ПОПЕЧИТЕЛЬСКОГО СОВЕТА</h6>
+                                    <h5 class="card-title fw-bold manager-name">Тимур Турлов</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Карточка 2: Рохус Шох -->
+                    <div class="col">
+                        <div class="card h-100 shadow-lg text-center border-0">
+                            <img src="images/rokhus.jpg" alt="Рохус Шох" class="card-img-top img-fluid mx-auto mt-3" style="width: 70%; height: auto; border-radius: 10px;">
+                            <div class="card-body d-flex flex-column justify-content-between">
+                                <div>
+                                    <h6 class="card-subtitle text-muted mb-1 manager-role">ПРЕЗИДЕНТ</h6>
+                                    <h5 class="card-title fw-bold manager-name">Рохус Шох</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Карточка 3: Александр Орлов -->
+                    <div class="col">
+                        <div class="card h-100 shadow-lg text-center border-0">
+                            <img src="images/aleksandr.jpg" alt="Александр Орлов" class="card-img-top img-fluid mx-auto mt-3" style="width: 70%; height: auto; border-radius: 10px;">
+                            <div class="card-body d-flex flex-column justify-content-between">
+                                <div>
+                                    <h6 class="card-subtitle text-muted mb-1 manager-role">ИСПОЛНИТЕЛЬНЫЙ ДИРЕКТОР</h6>
+                                    <h5 class="card-title fw-bold manager-name">Александр Орлов</h5>
+
+                                    <p class="card-text manager-email">
+                                        <span id="orlovEmail" class="text-info" data-copy="orlov@qjl.kz">orlov@qjl.kz</span>
+                                            <button class="btn btn-sm btn-outline-secondary copy-btn ms-2" data-target="#orlovEmail">
+                                        Копировать  
+                                            </button>
+                                    </p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+            
+            <!-- СЕКЦИЯ: Блок организации и проведения соревнований (Используем Bootstrap Cards) -->
+            <section class="management-section my-5">
+                <h2 class="text-center mb-4">Блок организации и проведения соревнований</h2>
+                
+                <!-- Адаптивная сетка карточек: 1 на мобильном, 2 на планшете, 3 на десктопе. g-4 для отступов. -->
+                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+                    
+                    <!-- Карточка 4: Куандык Ермекбаев -->
+                    <div class="col">
+                   <div class="card h-100 shadow-lg text-center border-0">
+                       <img src="images/kuandyk.jpg" alt="Куандык Ермекбаев" class="card-img-top img-fluid mx-auto mt-3" style="width: 70%; height: auto; border-radius: 10px;">
+                    <div class="card-body d-flex flex-column justify-content-between">
+                         <div>
+                  <h6 class="card-subtitle text-muted mb-1 manager-role">РУКОВОДИТЕЛЬ БЛОКА ОРГАНИЗАЦИИ И ПРОВЕДЕНИЯ СОРЕВНОВАНИЙ</h6>
+                    <h5 class="card-title fw-bold manager-name">Куандык Ермекбаев</h5>
+                
+                 <p class="card-text manager-email">
+                    <span id="yermekbayevEmail" class="text-info" data-copy="yermekbayev@qjl.kz">yermekbayev@qjl.kz</span>
+                    <button class="btn btn-sm btn-outline-secondary copy-btn ms-2" data-target="#yermekbayevEmail">
+                        Копировать
+                    </button>
+                        </p>
+                
+                </div>
+            </div>
+       </div>
+    </div>
+
+<div class="col">
+    <div class="card h-100 shadow-lg text-center border-0">
+        <img src="images/amir.jpg" alt="Амир Есеркепов" class="card-img-top img-fluid mx-auto mt-3" style="width: 70%; height: auto; border-radius: 10px;">
+        <div class="card-body d-flex flex-column justify-content-between">
+            <div>
+                <h6 class="card-subtitle text-muted mb-1 manager-role">TRAVEL-МЕНЕДЖЕР</h6>
+                <h5 class="card-title fw-bold manager-name">Амир Есеркепов</h5>
+
+                <p class="card-text manager-email">
+                    <span id="yesserkeoovEmail" class="text-info" data-copy="yesserkeoov@qjl.kz">yesserkeoov@qjl.kz</span>
+                    <button class="btn btn-sm btn-outline-secondary copy-btn ms-2" data-target="#yesserkeoovEmail">
+                        Копировать
+                    </button>
+                </p>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="col">
+    <div class="card h-100 shadow-lg text-center border-0">
+        <img src="images/ramazan.jpg" alt="Рамазан Сагадат" class="card-img-top img-fluid mx-auto mt-3" style="width: 70%; height: auto; border-radius: 10px;">
+        <div class="card-body d-flex flex-column justify-content-between">
+            <div>
+                <h6 class="card-subtitle text-muted mb-1 manager-role">TRAVEL-СПЕЦИАЛИСТ</h6>
+                <h5 class="card-title fw-bold manager-name">Рамазан Сагадат</h5>
+                
+                <p class="card-text manager-email">
+                    <span id="sagadatEmail" class="text-info" data-copy="sagadat@qjl.kz">sagadat@qjl.kz</span>
+                    <button class="btn btn-sm btn-outline-secondary copy-btn ms-2" data-target="#sagadatEmail">
+                        Копировать
+                    </button>
+                </p>
+
+            </div>
+        </div>
+    </div>
+</div>
+                </div>
+            </section>
+
+        </div> 
+        <div class="toast-container position-fixed top-0 start-50 translate-middle-x p-3" style="z-index: 1055;">
+    <div id="dynamicToast" class="toast align-items-center text-white bg-success border-0" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="d-flex">
+            <div class="toast-body">
+                Действие завершено!
+            </div>
+            <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+    </div>
+</div>
+    </main>
+
+<footer class="footer-section">
+    <div class="text-center container"> <p id="current-datetime" class="mb-1"></p> 
+        <p class="mb-1">Студенты: Zhumadulla Nurbolat, Azamat Oralkhan</p>
+        <p class="mb-0">© 2025 QJ League | Все права защищены</p>
+    </div>
+</footer>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> 
+<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script src="js/date_time.js"></script>
+<script src="js/currency_api.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/theme.js"></script>
+<script src="js/jquery_script.js"></script>
+</body>
+</html>
+
+

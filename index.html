@@ -1,0 +1,287 @@
+    <!DOCTYPE html>
+    <html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>QJ League | Главная</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+                <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+                <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+    <div id="progress-bar"></div>
+    <header class="header-section">
+    <nav class="navbar navbar-expand-lg">
+        <div class="header-container container-fluid">
+            <a href="index.html" class="logo navbar-brand">
+                <img src="images/qj-logo.png" alt="QJ League Logo">
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 main-nav-ul">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Главная</a></li>
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="about.html">О лиге</a></li>
+                    <li class="nav-item"><a class="nav-link" href="statistics.html">Статистика</a></li>
+                    <li class="nav-item"><a class="nav-link" href="news.html">Новости</a></li>
+                    <li class="nav-item"><a class="nav-link" href="gallery.html">Медиа</a></li>
+                    <li class="nav-item"><a class="nav-link" href="faq.html">FAQ</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Контакты</a></li>
+                </ul>
+
+               <div class="language-selector d-flex align-items-center">
+    <li class="nav-item profile-link" style="display: none;">
+        <a class="nav-link" href="profile.html">
+            <i class="fa-solid fa-user"></i> Профиль
+        </a>
+    </li>
+    <li class="nav-item auth-link">
+        <a class="nav-link btn btn-sm btn-outline-primary" href="auth.html">
+            Вход / Регистрация
+        </a>
+    </li>
+
+    <div id="google_translate_element" class="me-3"></div>
+    <button id="theme-toggle" class="btn btn-sm btn-outline-secondary">
+        🌙 Ночной режим
+    </button>
+</div>
+            </div>
+        </div>
+    </nav>
+</header>
+        <!-- Используем контейнер Bootstrap для основного контента -->
+         <main class="container my-5">
+    <div id="newsCarousel" class="carousel slide mb-5 shadow-lg rounded" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#newsCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#newsCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#newsCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+
+        <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="5000">
+                <img src="images/qj-league-photo.jpg" class="d-block w-100 carousel-img" alt="QJ League Logo">
+                <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-75 p-3 rounded">
+                    <h5>Добро пожаловать в FREEDOM QJ LEAGUE!</h5>
+                    <p>Будущее казахстанского футбола. 54 команды, 1620 игроков.</p>
+                </div>
+            </div>
+
+            <div class="carousel-item" data-bs-interval="5000">
+                <img src="images/gleb_makridov.jpg" class="d-block w-100 carousel-img" alt="Глеб Макридов MVP">
+                <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-75 p-3 rounded">
+                    <h5>Глеб Макридов – MVP Сезона 2025!</h5>
+                    <p>Оглашено имя обладателя премии Бахтияра Зайнутдинова.</p>
+                </div>
+            </div>
+
+            <div class="carousel-item" data-bs-interval="5000">
+                <img src="images/kirill_keker.jpg" class="d-block w-100 carousel-img" alt="Кирилл Кекер">
+                <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-75 p-3 rounded">
+                    <h5>Кирилл Кекер – Лучший руководитель 2025!</h5>
+                    <p>Отмечен за выдающееся руководство и достижения команды.</p>
+                </div>
+            </div>
+        </div>
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#newsCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#newsCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+    </main>
+        <main class="container my-5">
+            <div class="text-center mb-5">
+                        <h1 id="greeting-message" class="display-4 fw-bold text-primary"></h1>
+                    </div>
+            <!-- Адаптивная сетка: на десктопе 2 колонки, на мобильных 1 -->
+            <div class="row g-4">
+
+                <!-- Левая колонка (4 из 12 на десктопе) -->
+                <div class="col-lg-4">
+                    <!-- Турнирная таблица в карточке Bootstrap -->
+                    <div class="card shadow-sm mb-4">
+                        <div class="card-body">
+                            <h5 class="card-title text-center">Freedom QJ League</h5>
+                            <table class="table table-striped table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>№</th>
+                                        <th>Команда</th>
+                                        <th>И</th>
+                                        <th>О</th>
+                                        <th>РМ</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td class="team-name"><img src="images/kairat-logo.png" alt="Логотип Кайрат" class="team-logo">Кайрат</td>
+                                        <td>18</td>
+                                        <td>69</td>
+                                        <td>+50</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td class="team-name"><img src="images/shakhter-logo.png" alt="Логотип Шахтёр" class="team-logo">Шахтёр</td>
+                                        <td>18</td>
+                                        <td>33</td>
+                                        <td>+17</td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td class="team-name"><img src="images/zhas-kyran-logo.png" alt="Логотип Жас Кыран" class="team-logo">Жас Кыран</td>
+                                        <td>18</td>
+                                        <td>33</td>
+                                        <td>+12</td>
+                                    </tr>
+                                    <tr>
+                                        <td>4</td>
+                                        <td class="team-name"><img src="images/astana-logo.png" alt="Логотип Астана" class="team-logo">Астана</td>
+                                        <td>18</td>
+                                        <td>30</td>
+                                        <td>+16</td>
+                                    </tr>
+                                    <tr>
+                                        <td>5</td>
+                                        <td class="team-name"><img src="images/irtysh-logo.png" alt="Логотип Иртыш" class="team-logo">Иртыш</td>
+                                        <td>18</td>
+                                        <td>29</td>
+                                        <td>+7</td>
+                                    </tr>
+                                    <tr>
+                                        <td>6</td>
+                                        <td class="team-name"><img src="images/ordabasy-logo.png" alt="Логотип Ордабасы" class="team-logo">Ордабасы</td>
+                                        <td>18</td>
+                                        <td>28</td>
+                                        <td>+1</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Блок лучших бомбардиров в карточке Bootstrap -->
+                    <div class="card shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title text-center">Лучшие бомбардиры</h5>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item d-flex align-items-center">
+                                    <img src="images/player-d.jpg" alt="Фото Даулета Орынбасара" class="player-photo">
+                                    <img src="images/kairat-logo.png" alt="Логотип Кайрат" class="player-team-logo">
+                                    Даулет Орынбасар (Кайрат) - 17 голов
+                                </li>
+                                <li class="list-group-item d-flex align-items-center">
+                                    <img src="images/kairat-logo.png" alt="Логотип Кайрат" class="player-team-logo">
+                                    Абылай Толеухан (Кайрат) - 15 голов
+                                </li>
+                                <li class="list-group-item d-flex align-items-center">
+                                    <img src="images/shakhter-logo.png" alt="Логотип Шахтер" class="player-team-logo">
+                                    Глеб Макридов (Шахтер) - 15 голов
+                                </li>
+                                <li class="list-group-item d-flex align-items-center">
+                                    <img src="images/astana-logo.png" alt="Логотип Астана" class="player-team-logo">
+                                    Ален Пак (Астана) - 11 голов
+                                </li>
+                                <li class="list-group-item d-flex align-items-center">
+                                    <img src="images/irtysh-logo.png" alt="Логотип Иртыш" class="player-team-logo">
+                                    Руслан Рахметов (Иртыш) - 11 голов
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Правая колонка (8 из 12 на десктопе) -->
+                <div class="col-lg-8">
+                    <!-- Главная новость в карточке Bootstrap -->
+                    <div class="card shadow-lg mb-4">
+                        <img src="images/team-photo.jpg" class="card-img-top" alt="Футболисты команды Кайрат">
+                        <div class="card-body">
+                            <h1 class="card-title h2">«Кайрат» – досрочный чемпион<br>Freedom QJ League!</h1>
+                            <p class="card-text"><small class="text-muted">20 сентября 2025</small></p>
+                        </div>
+                    </div>
+                    
+                    <!-- Другие новости -->
+                    <h3 class="mb-3">Другие новости</h3>
+                    <div class="row row-cols-1 row-cols-md-2 g-3">
+                        <div class="col">
+                            <div class="card h-100 shadow-sm">
+                                <img src="images/news1.jpg" class="card-img-top" alt="Новости 1">
+                                <div class="card-body">
+                                    <p class="card-text">Талгат Батыршаев: Мы стараемся прививать в детях любовь к футболу.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card h-100 shadow-sm">
+                                <img src="images/news2.jpg" class="card-img-top" alt="Новости 2">
+                                <div class="card-body">
+                                    <p class="card-text">В финальной четверке: что нужно знать перед 14-м туром Freedom QJ League W</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card h-100 shadow-sm">
+                                <img src="images/news3.jpg" class="card-img-top" alt="Новости 3">
+                                <div class="card-body">
+                                    <p class="card-text">Freedom QJ League окажет финансовую поддержку «Ордабасы» для участия в Юношеской лиге УЕФА</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <section class="text-center my-5 container">
+            <h2 class="mb-4">Будьте в курсе всех новостей!</h2>
+            <button id="open-popup-btn" class="btn btn-primary btn-lg">Подписаться на рассылку</button>
+        </section>
+        </main>
+        
+        <div id="popup-container" class="popup-container">
+            <div class="popup-content">
+                <span class="close-btn">&times;</span>
+                <h2>Подписка на новости QJ League</h2>
+                <form id="subscription-form">
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Ваше имя:</label>
+                        <input type="text" class="form-control" id="name" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email:</label>
+                        <input type="email" class="form-control" id="email" required>
+                    </div>
+                    <button type="submit" class="btn btn-success w-100">Подписаться</button>
+                </form>
+            </div>
+        </div>
+
+    <footer class="footer-section">
+        <div class="text-center container"> <p id="current-datetime" class="mb-1"></p> 
+            <p class="mb-1">Студенты: Zhumadulla Nurbolat, Azamat Oralkhan</p>
+            <p class="mb-0">© 2025 QJ League | Все права защищены</p>
+        </div>
+    </footer>
+        
+        <!-- Подключение Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+ <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+        <script src="js/index_scripts.js"></script>
+        <script src="js/auth.js"></script>  
+        <script src="js/date_time.js"></script>
+        <script src="js/popup.js"></script>
+        <script src="js/theme.js"></script>
+        <script src="js/jquery_script.js"></script>
+        </body>
+    </html>
